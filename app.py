@@ -41,7 +41,7 @@ if st.button("Generate Bill"):
 
         st.dataframe(bill_df)
 
-        # Save to Excel
-        bill_df.to_excel("grocery_bill.xlsx", index=False)
-        with open("grocery_bill.xlsx", "rb") as f:
-            st.download_button("💾 Download Bill as Excel", f, "grocery_bill.xlsx")
+        # Save to CSV (works without openpyxl)
+        csv = bill_df.to_csv(index=False).encode('utf-8')
+        st.download_button("💾 Download Bill as CSV", data=csv, file_name="grocery_bill.csv", mime='text/csv')
+
