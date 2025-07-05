@@ -5,7 +5,7 @@ import pandas as pd
 items_df = pd.read_csv("items.csv")
 
 st.set_page_config(page_title="🛒 Grocery Store App", layout="centered")
-st.title("🛍️ Durai Grocery Store Billing System")
+st.title(" Durai Maligai Kadai 😎")
 
 st.subheader("📋 Available Items")
 st.dataframe(items_df)
